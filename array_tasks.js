@@ -28,7 +28,6 @@ var arrayTasks = {
 
 	findDuplicates: function (arr) {
 		let duplicates = [];
-
 		arr.forEach(function(num, index) {
 			if(arr.indexOf(num, index + 1) > -1) {
 				if (duplicates.indexOf(num) === - 1) {
@@ -40,7 +39,7 @@ var arrayTasks = {
 	},
 
 	removeAndClone: function (arr, valueToRemove) {
-		cloneArray = [];
+		let cloneArray = [];
 		arr.forEach(function(num) {
 			if(num !== valueToRemove) {
 				cloneArray.push(num);
@@ -51,12 +50,24 @@ var arrayTasks = {
 	},
 
 	findIndexesOf: function (arr, itemToFind) {
-
+		results = [];
+		arr.forEach(function(num, index) {
+			if(num == itemToFind) {
+				results.push(index);
+			}
+		})
+		return results;
 	},
 
-	// sumOfAllEvenNumbersSquared: function (arr) {
-
-	// }
+	sumOfAllEvenNumbersSquared: function (arr) {
+		total = 0;
+		arr.forEach(function(num) {
+			if(num % 2 === 0) {
+				total += num * num;
+			}
+		});
+		return total;
+	}
 
 }
 
